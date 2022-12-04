@@ -10,6 +10,7 @@ namespace SnakeAndLadder
     {
         public static void OptionsChecking()
         {
+            int position = 0;
             const int noPlay = 1;
             const int ladder = 2;
             const int snake= 3;
@@ -21,12 +22,20 @@ namespace SnakeAndLadder
             {
                 case noPlay:
                     {
-                        Console.WriteLine("Player in NoPlay Position");
+                        Console.WriteLine("Player in same Position");
                     }
                     break;
                 case ladder: 
                     {
+                        position += r;
+                        Console.WriteLine("Player moves in ladder at position: " + r);
 
+                    }
+                    break;
+                case snake:
+                    {
+                        position-= r;
+                        Console.WriteLine("Player bitten by snake at position: " + r);
                     }
                     break;
             }
